@@ -2,26 +2,65 @@
   "contractName": "SupplyChain",
   "abi": [
     {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "items",
+      "outputs": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "sku",
+          "type": "uint256"
+        },
+        {
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "name": "state",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "constructor"
     }
   ],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820717d75172fe9197b235db511ad7b38d0dbc1b7ce2c7e4f68db43137461257bd80029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820717d75172fe9197b235db511ad7b38d0dbc1b7ce2c7e4f68db43137461257bd80029",
-  "sourceMap": "25:81:1:-;;;73:27;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:27:1;25:81;;;;;;",
-  "deployedSourceMap": "25:81:1:-;;;;;",
-  "source": "pragma solidity ^0.5.0;\n\ncontract SupplyChain {\n\n  \n  address owner;\n\n\n  constructor() public {\n\n  }\n\n\n\n\n}\n",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102d0806100606000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063bfb231d214610046575b600080fd5b34801561005257600080fd5b5061007f6004803603602081101561006957600080fd5b8101908080359060200190929190505050610183565b60405180806020018781526020018681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183600381111561010357fe5b60ff168152602001828103825288818151815260200191508051906020019080838360005b83811015610143578082015181840152602081019050610128565b50505050905090810190601f1680156101705780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b6002602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561022f5780601f106102045761010080835404028352916020019161022f565b820191906000526020600020905b81548152906001019060200180831161021257829003601f168201915b5050505050908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040160149054906101000a900460ff1690508656fea165627a7a7230582036fe70a265d3c34a68c50c3f6d70a1953252b9fa95d31dafd773726f4cecdc3a0029",
+  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063bfb231d214610046575b600080fd5b34801561005257600080fd5b5061007f6004803603602081101561006957600080fd5b8101908080359060200190929190505050610183565b60405180806020018781526020018681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183600381111561010357fe5b60ff168152602001828103825288818151815260200191508051906020019080838360005b83811015610143578082015181840152602081019050610128565b50505050905090810190601f1680156101705780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b6002602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561022f5780601f106102045761010080835404028352916020019161022f565b820191906000526020600020905b81548152906001019060200180831161021257829003601f168201915b5050505050908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040160149054906101000a900460ff1690508656fea165627a7a7230582036fe70a265d3c34a68c50c3f6d70a1953252b9fa95d31dafd773726f4cecdc3a0029",
+  "sourceMap": "25:606:1:-;;;577:50;8:9:-1;5:2;;;30:1;27;20:12;5:2;577:50:1;612:10;604:5;;:18;;;;;;;;;;;;;;;;;;25:606;;;;;;",
+  "deployedSourceMap": "25:606:1:-;;;;;;;;;;;;;;;;;;;;;;;;409:34;;8:9:-1;5:2;;;30:1;27;20:12;5:2;409:34:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;409:34:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;409:34:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract SupplyChain {\n\n  // Owner is the person who deploy the smartContract\n  address owner;\n  // skuCount to track the most recent sku # */\n  uint skuCount;\n\n  struct Item {\n    string name;\n    uint sku;\n    uint price;\n    address seller;\n    address buyer;\n    State state;\n\n  }\n\n  /* A public mapping that maps the SKU (a number) to an Item defined in the Struct Item.\n\n  */\n  mapping(uint => Item) public items;\n  // Possible states of an item at any given time in its supplyChain life cycle\n  enum State {ForSale, Sold, Shipped, Received}\n\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n\n}\n",
   "sourcePath": "/home/hyperledger/dapp/ethereum_supplychain/contracts/SupplyChain.sol",
   "ast": {
     "absolutePath": "/home/hyperledger/dapp/ethereum_supplychain/contracts/SupplyChain.sol",
     "exportedSymbols": {
       "SupplyChain": [
-        65
+        94
       ]
     },
-    "id": 66,
+    "id": 95,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -41,9 +80,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 65,
+        "id": 94,
         "linearizedBaseContracts": [
-          65
+          94
         ],
         "name": "SupplyChain",
         "nodeType": "ContractDefinition",
@@ -53,8 +92,8 @@
             "id": 60,
             "name": "owner",
             "nodeType": "VariableDeclaration",
-            "scope": 65,
-            "src": "54:13:1",
+            "scope": 94,
+            "src": "105:13:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -65,7 +104,7 @@
               "id": 59,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "54:7:1",
+              "src": "105:7:1",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -76,52 +115,392 @@
             "visibility": "internal"
           },
           {
+            "constant": false,
+            "id": 62,
+            "name": "skuCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "170:13:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 61,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "170:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "SupplyChain.Item",
+            "id": 75,
+            "members": [
+              {
+                "constant": false,
+                "id": 64,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "206:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 63,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "206:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 66,
+                "name": "sku",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "223:8:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 65,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "223:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 68,
+                "name": "price",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "237:10:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 67,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "237:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70,
+                "name": "seller",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "253:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 69,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "253:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 72,
+                "name": "buyer",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "273:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 71,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "273:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 74,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "292:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_State_$84",
+                  "typeString": "enum SupplyChain.State"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 73,
+                  "name": "State",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 84,
+                  "src": "292:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_State_$84",
+                    "typeString": "enum SupplyChain.State"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Item",
+            "nodeType": "StructDefinition",
+            "scope": 94,
+            "src": "188:121:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 79,
+            "name": "items",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "409:34:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Item_$75_storage_$",
+              "typeString": "mapping(uint256 => struct SupplyChain.Item)"
+            },
+            "typeName": {
+              "id": 78,
+              "keyType": {
+                "id": 76,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "417:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "409:21:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Item_$75_storage_$",
+                "typeString": "mapping(uint256 => struct SupplyChain.Item)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 77,
+                "name": "Item",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 75,
+                "src": "425:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Item_$75_storage_ptr",
+                  "typeString": "struct SupplyChain.Item"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "SupplyChain.State",
+            "id": 84,
+            "members": [
+              {
+                "id": 80,
+                "name": "ForSale",
+                "nodeType": "EnumValue",
+                "src": "539:7:1"
+              },
+              {
+                "id": 81,
+                "name": "Sold",
+                "nodeType": "EnumValue",
+                "src": "548:4:1"
+              },
+              {
+                "id": 82,
+                "name": "Shipped",
+                "nodeType": "EnumValue",
+                "src": "554:7:1"
+              },
+              {
+                "id": 83,
+                "name": "Received",
+                "nodeType": "EnumValue",
+                "src": "563:8:1"
+              }
+            ],
+            "name": "State",
+            "nodeType": "EnumDefinition",
+            "src": "527:45:1"
+          },
+          {
             "body": {
-              "id": 63,
+              "id": 92,
               "nodeType": "Block",
-              "src": "94:6:1",
-              "statements": []
+              "src": "598:29:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 90,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 87,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 60,
+                      "src": "604:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 88,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 109,
+                        "src": "612:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 89,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "612:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "604:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 91,
+                  "nodeType": "ExpressionStatement",
+                  "src": "604:18:1"
+                }
+              ]
             },
             "documentation": null,
-            "id": 64,
+            "id": 93,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 61,
+              "id": 85,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "84:2:1"
+              "src": "588:2:1"
             },
             "returnParameters": {
-              "id": 62,
+              "id": 86,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "94:0:1"
+              "src": "598:0:1"
             },
-            "scope": 65,
-            "src": "73:27:1",
+            "scope": 94,
+            "src": "577:50:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 66,
-        "src": "25:81:1"
+        "scope": 95,
+        "src": "25:606:1"
       }
     ],
-    "src": "0:107:1"
+    "src": "0:632:1"
   },
   "legacyAST": {
     "absolutePath": "/home/hyperledger/dapp/ethereum_supplychain/contracts/SupplyChain.sol",
     "exportedSymbols": {
       "SupplyChain": [
-        65
+        94
       ]
     },
-    "id": 66,
+    "id": 95,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -141,9 +520,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 65,
+        "id": 94,
         "linearizedBaseContracts": [
-          65
+          94
         ],
         "name": "SupplyChain",
         "nodeType": "ContractDefinition",
@@ -153,8 +532,8 @@
             "id": 60,
             "name": "owner",
             "nodeType": "VariableDeclaration",
-            "scope": 65,
-            "src": "54:13:1",
+            "scope": 94,
+            "src": "105:13:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -165,7 +544,7 @@
               "id": 59,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "54:7:1",
+              "src": "105:7:1",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -176,43 +555,383 @@
             "visibility": "internal"
           },
           {
+            "constant": false,
+            "id": 62,
+            "name": "skuCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "170:13:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 61,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "170:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "SupplyChain.Item",
+            "id": 75,
+            "members": [
+              {
+                "constant": false,
+                "id": 64,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "206:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 63,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "206:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 66,
+                "name": "sku",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "223:8:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 65,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "223:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 68,
+                "name": "price",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "237:10:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 67,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "237:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 70,
+                "name": "seller",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "253:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 69,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "253:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 72,
+                "name": "buyer",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "273:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 71,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "273:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 74,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 75,
+                "src": "292:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_State_$84",
+                  "typeString": "enum SupplyChain.State"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 73,
+                  "name": "State",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 84,
+                  "src": "292:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_State_$84",
+                    "typeString": "enum SupplyChain.State"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Item",
+            "nodeType": "StructDefinition",
+            "scope": 94,
+            "src": "188:121:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 79,
+            "name": "items",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "409:34:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Item_$75_storage_$",
+              "typeString": "mapping(uint256 => struct SupplyChain.Item)"
+            },
+            "typeName": {
+              "id": 78,
+              "keyType": {
+                "id": 76,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "417:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "409:21:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Item_$75_storage_$",
+                "typeString": "mapping(uint256 => struct SupplyChain.Item)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 77,
+                "name": "Item",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 75,
+                "src": "425:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Item_$75_storage_ptr",
+                  "typeString": "struct SupplyChain.Item"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "SupplyChain.State",
+            "id": 84,
+            "members": [
+              {
+                "id": 80,
+                "name": "ForSale",
+                "nodeType": "EnumValue",
+                "src": "539:7:1"
+              },
+              {
+                "id": 81,
+                "name": "Sold",
+                "nodeType": "EnumValue",
+                "src": "548:4:1"
+              },
+              {
+                "id": 82,
+                "name": "Shipped",
+                "nodeType": "EnumValue",
+                "src": "554:7:1"
+              },
+              {
+                "id": 83,
+                "name": "Received",
+                "nodeType": "EnumValue",
+                "src": "563:8:1"
+              }
+            ],
+            "name": "State",
+            "nodeType": "EnumDefinition",
+            "src": "527:45:1"
+          },
+          {
             "body": {
-              "id": 63,
+              "id": 92,
               "nodeType": "Block",
-              "src": "94:6:1",
-              "statements": []
+              "src": "598:29:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 90,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 87,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 60,
+                      "src": "604:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 88,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 109,
+                        "src": "612:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 89,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "612:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "604:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 91,
+                  "nodeType": "ExpressionStatement",
+                  "src": "604:18:1"
+                }
+              ]
             },
             "documentation": null,
-            "id": 64,
+            "id": 93,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 61,
+              "id": 85,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "84:2:1"
+              "src": "588:2:1"
             },
             "returnParameters": {
-              "id": 62,
+              "id": 86,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "94:0:1"
+              "src": "598:0:1"
             },
-            "scope": 65,
-            "src": "73:27:1",
+            "scope": 94,
+            "src": "577:50:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 66,
-        "src": "25:81:1"
+        "scope": 95,
+        "src": "25:606:1"
       }
     ],
-    "src": "0:107:1"
+    "src": "0:632:1"
   },
   "compiler": {
     "name": "solc",
@@ -220,7 +939,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0",
-  "updatedAt": "2018-12-25T00:22:36.139Z",
+  "updatedAt": "2018-12-25T08:09:16.600Z",
   "devdoc": {
     "methods": {}
   },
