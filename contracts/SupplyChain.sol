@@ -37,7 +37,6 @@ contract SupplyChain {
 
   function addItem(bytes32 _name, uint _price) public returns(bool result){
 
-
     items[skuCount] = Item({name: _name, sku: skuCount, price: _price, seller: msg.sender, buyer: address(0), state: uint(State.ForSale)});
     skuCount = skuCount + 1;
 
@@ -46,7 +45,18 @@ contract SupplyChain {
     result = true;
     return result;
 
-    //return result;
+  }
+
+  function fetchItem(uint _sku) public returns(bytes32 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
+
+    _name = items[_sku].name;
+    _sku = items[_sku].sku;
+    _price = items[_sku].price;
+    _seller = items[_sku].seller;
+    _buyer = items[_sku].buyer;
+    _state = uint(items[_sku].state);
+
+    return (_name, _sku, _price, _seller, _buyer, _state);
   }
 
 
