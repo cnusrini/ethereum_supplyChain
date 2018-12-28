@@ -47,14 +47,14 @@ contract SupplyChain {
 
   }
 
-  function fetchItem(uint _sku) public returns(bytes32 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
+  function fetchItem(uint _skuNo) view public returns(bytes32 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
 
-    _name = items[_sku].name;
-    _sku = items[_sku].sku;
-    _price = items[_sku].price;
-    _seller = items[_sku].seller;
-    _buyer = items[_sku].buyer;
-    _state = uint(items[_sku].state);
+    _name = items[_skuNo].name;
+    _sku = items[_skuNo].sku;
+    _price = items[_skuNo].price;
+    _seller = items[_skuNo].seller;
+    _buyer = items[_skuNo].buyer;
+    _state = uint(items[_skuNo].state);
 
     return (_name, _sku, _price, _seller, _buyer, _state);
   }
