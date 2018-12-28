@@ -6,16 +6,15 @@ contract SupplyChain {
   address owner;
   // skuCount to track the most recent sku # */
   uint public skuCount;
-  uint myprice;
-  bytes32 myName;
 
   struct Item {
-    bytes32 name;
+    bytes24 name;
     uint sku;
     uint price;
+    uint state;
     address seller;
     address buyer;
-    uint state;
+
 
   }
 
@@ -35,21 +34,21 @@ contract SupplyChain {
 
   // functions
 
-  function addItem(bytes32 _name, uint _price) public returns(bool result){
-
-    items[skuCount] = Item({name: _name, sku: skuCount, price: _price, seller: msg.sender, buyer: address(0), state: uint(State.ForSale)});
-    skuCount = skuCount + 1;
-
+  function addItem(bytes24 _name, uint _price) public returns(bool result){
     emit ForSale(skuCount);
+
+    items[skuCount] = Item({name: _name, sku: skuCount, price: _price, state: uint(State.ForSale), seller: msg.sender, buyer: address(0)});
+    skuCount = skuCount + 1;
 
     result = true;
     return result;
 
   }
 
-  function fetchItem(uint _skuNo) view public returns(bytes32 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
+  function fetchItem(uint _skuNo) view public returns(bytes24 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
+    //Item storage myItes = allItems[_skuNo];
 
-    require(_skuNo > 0);
+    //require(_skuNo > 0);
 
     _name = items[_skuNo].name;
     _sku = items[_skuNo].sku;
