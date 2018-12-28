@@ -49,6 +49,8 @@ contract SupplyChain {
 
   function fetchItem(uint _skuNo) view public returns(bytes32 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
 
+    require(_skuNo > 0);
+
     _name = items[_skuNo].name;
     _sku = items[_skuNo].sku;
     _price = items[_skuNo].price;
