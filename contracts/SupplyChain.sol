@@ -32,7 +32,7 @@ contract SupplyChain {
   modifier checkValue(uint _sku){
     _;
     Item storage myItem = items[_sku];
-    
+
     uint amountToRefund = msg.value - myItem.price;
     myItem.buyer.transfer(amountToRefund);
   }
@@ -63,8 +63,10 @@ contract SupplyChain {
     Item storage myItem = items[_itemToBuySku];
     //Setting the state of the item to sold should be done first so that other buyer will not be allowed to buy the same item at the same time.
     myItem.state = uint(State.Sold);
-    myItem.seller.transfer(myItem.price);
+    //Transfer of ownership should happen befor transfering value. Otherwise, the transfer of value will not happen
     myItem.buyer = msg.sender;
+    myItem.seller.transfer(myItem.price);
+    //myItem.buyer = msg.sender;
 
     emit Sold(_itemToBuySku);
   }
