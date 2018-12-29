@@ -12,8 +12,8 @@ contract SupplyChain {
     uint sku;
     uint price;
     uint state;
-    address seller;
-    address buyer;
+    address payable seller;
+    address payable buyer;
 
 
   }
@@ -26,6 +26,17 @@ contract SupplyChain {
   // Possible states of an item at any given time in its supplyChain life cycle
   enum State {ForSale, Sold, Shipped, Received}
   event ForSale(uint sku);
+  event Sold(uint sku);
+
+  modifier paidEnough(uint _price){ require(msg.value >= _price); _; }
+  modifier checkValue(uint _sku){
+    _;
+    Item storage myItem = items[_sku];
+    
+    uint amountToRefund = msg.value - myItem.price;
+    myItem.buyer.transfer(amountToRefund);
+  }
+  modifier forSale(uint _sku){ require(items[_sku].state == uint(State.ForSale)); _; }
 
   constructor() public {
     owner = msg.sender;
@@ -34,21 +45,33 @@ contract SupplyChain {
 
   // functions
 
-  function addItem(bytes24 _name, uint _price) public returns(bool result){
+  function addItem(bytes24 _name, uint _price) public returns(uint ){
     emit ForSale(skuCount);
 
     items[skuCount] = Item({name: _name, sku: skuCount, price: _price, state: uint(State.ForSale), seller: msg.sender, buyer: address(0)});
     skuCount = skuCount + 1;
 
-    result = true;
-    return result;
+    //result = true;
+    return skuCount;
 
   }
 
-  function fetchItem(uint _skuNo) view public returns(bytes24 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
-    //Item storage myItes = allItems[_skuNo];
+  function buyItem(uint _itemToBuySku)
+    public payable forSale(_itemToBuySku) paidEnough(items[_itemToBuySku].price) checkValue(_itemToBuySku)
 
-    //require(_skuNo > 0);
+  {
+    Item storage myItem = items[_itemToBuySku];
+    //Setting the state of the item to sold should be done first so that other buyer will not be allowed to buy the same item at the same time.
+    myItem.state = uint(State.Sold);
+    myItem.seller.transfer(myItem.price);
+    myItem.buyer = msg.sender;
+
+    emit Sold(_itemToBuySku);
+  }
+
+  function fetchItem(uint _skuNo) view public returns(bytes24 _name, uint _sku, uint _price, address _seller, address _buyer, uint _state){
+
+    require(_skuNo > 0);
 
     _name = items[_skuNo].name;
     _sku = items[_skuNo].sku;
@@ -58,6 +81,7 @@ contract SupplyChain {
     _state = uint(items[_skuNo].state);
 
     return (_name, _sku, _price, _seller, _buyer, _state);
+
   }
 
 
