@@ -22,6 +22,7 @@ contract TestSupplyChain {
     }
     */
     //addItem
+    /*
     function testAddItem() public {
       //SupplyChain supplyChain = SupplyChain(DeployedAddresses.SupplyChain());
       supplyChain = new SupplyChain();
@@ -53,9 +54,10 @@ contract TestSupplyChain {
         );
         */
 
-      Assert.equal(actualPrice, expectedPrice, 'not equal');
+      //Assert.equal(actualPrice, expectedPrice, 'not equal');
 
-    }
+    //}
+
     // buyItem
 
     // test for failure if user does not send enough funds
