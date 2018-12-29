@@ -27,6 +27,7 @@ contract SupplyChain {
   enum State {ForSale, Sold, Shipped, Received}
   event ForSale(uint sku);
   event Sold(uint sku);
+  event Shipped(uint sku);
 
   modifier paidEnough(uint _price){ require(msg.value >= _price); _; }
   modifier checkValue(uint _sku){
@@ -36,7 +37,13 @@ contract SupplyChain {
     uint amountToRefund = msg.value - myItem.price;
     myItem.buyer.transfer(amountToRefund);
   }
+
+  modifier verifyCaller(address _address){
+    require(msg.sender == _address);
+    _;
+  }
   modifier forSale(uint _sku){ require(items[_sku].state == uint(State.ForSale)); _; }
+  modifier sold(uint _sku){require(items[_sku].state == uint(State.Sold)); _; }
 
   constructor() public {
     owner = msg.sender;
@@ -54,6 +61,12 @@ contract SupplyChain {
     //result = true;
     return skuCount;
 
+  }
+
+  function shipItem(uint _itemToShipSku) public sold(_itemToShipSku) verifyCaller(items[_itemToShipSku].seller){
+
+    items[_itemToShipSku].state = uint(State.Sold);
+    emit Shipped(_itemToShipSku);
   }
 
   function buyItem(uint _itemToBuySku)
