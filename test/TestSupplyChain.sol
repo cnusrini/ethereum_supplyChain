@@ -6,7 +6,33 @@ import "truffle/DeployedAddresses.sol";
 import "../contracts/SupplyChain.sol";
 
 contract TestSupplyChain {
-    SupplyChain public supplyChain;
+  SupplyChain public supplyChain;
+
+  //Expected values
+  bytes24 expectedName;
+  uint expectedSku;
+  uint expectedPrice;
+  uint expectedState;
+  address payable expectedSeller;
+  address payable expectedBuyer;
+
+  //Actual values
+  bytes24 actualName;
+  uint actualSku;
+  uint actualPrice;
+  uint actualState;
+  address payable actualSeller;
+  address payable actualBuyer;
+
+  function beforeAll() public{
+      supplyChain = new SupplyChain();
+  }
+
+  function testConstructor() public{
+    uint skuInit = 0;
+    Assert.equal(supplyChain.skuCount(), skuInit, 'skuCount is not initialized to zero.');
+  }
+  /*
     address public seller;
     address public buyer;
     // Test for failing conditions in this contracts
@@ -15,6 +41,7 @@ contract TestSupplyChain {
     // test that every modifier is working
     event sellerBuyer(string sellbuy , address seller, address buyer);
     event ForSale(string sample , bytes24 name, uint sku, uint price);
+    */
     /*
     function testAddress() public {
 
