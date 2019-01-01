@@ -47,8 +47,9 @@ contract SupplyChain {
   modifier forSale(uint _sku){ require(items[_sku].state == uint(State.ForSale)); _; }
   modifier sold(uint _sku){require(items[_sku].state == uint(State.Sold)); _; }
   modifier shipped(uint _sku){
-    _;
+
     require(items[_sku].state == uint(State.Shipped));
+    _;
   }
 
   constructor() public {
