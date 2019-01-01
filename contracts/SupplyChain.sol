@@ -78,7 +78,7 @@ contract SupplyChain {
 
   function shipItem(uint _itemToShipSku) public sold(_itemToShipSku) verifyCaller(items[_itemToShipSku].seller){
 
-    items[_itemToShipSku].state = uint(State.Sold);
+    items[_itemToShipSku].state = uint(State.Shipped);
     emit Shipped(_itemToShipSku);
   }
 

@@ -78,4 +78,24 @@ it('should add an item with the provided name and price', async () => {
 
   });
 
+  it('should allow the seller to mark the item as shipped', async () => {
+
+    try {
+      const tx = await deployedContract.shipItem(sku, {from: alice})
+      if(tx.logs[0].event === 'Shipped'){
+        sku = tx.logs[0].args.sku.toString(10)
+        eventEmitted = true
+      }
+
+      result = await deployedContract.items.call(sku);
+      
+    } catch (e) {
+      console.log(e.message);
+    }
+    assert.equal(eventEmitted , true,'adding an item should emit a Shipped event')
+    assert.equal(result[3].toString(10),2,'the state of the item should be "Shipped", which should be declared third in the State Enum')
+
+
+  });
+
 });
