@@ -6,7 +6,12 @@
   * Node v8.11.2
 
 
-Unit testing using :
-javaScript,
-solidity
-Ganache CLI v6.2.5 (ganache-core: 2.3.3)
+* Unit testing using :
+  * javaScript,
+  - [x] javaScripts compelted
+  * solidity
+  - [] solidity unit test in progress
+  * Ganache CLI v6.2.5 (ganache-core: 2.3.3)
+
+* Build in :
+  * travis ci
