@@ -24,20 +24,35 @@ contract TestSupplyChain {
   address payable actualSeller;
   address payable actualBuyer;
 
+  event eventObj(uint _seller, address addr);
+
+
   function beforeAll() public{
       supplyChain = new SupplyChain();
+
+
   }
 
   function testConstructor() public{
     uint skuInit = 0;
     Assert.equal(supplyChain.skuCount(), skuInit, 'skuCount is not initialized to zero.');
   }
+
+  function testAddItem() public {
+    expectedName = bytes24('book');
+    expectedPrice = 1000;
+
+    uint skuid = supplyChain.addItem(expectedName , expectedPrice);
+    emit eventObj(skuid, msg.sender);
+
+    Assert.equal(skuid , 0 ,'not equal');
+  }
+
+
   /*
-    address public seller;
-    address public buyer;
+
     // Test for failing conditions in this contracts
-    //SupplyChain supplyChain = SupplyChain(DeployedAddresses.SupplyChain());
-    //address addr = supplyChain.constructor();
+
     // test that every modifier is working
     event sellerBuyer(string sellbuy , address seller, address buyer);
     event ForSale(string sample , bytes24 name, uint sku, uint price);
